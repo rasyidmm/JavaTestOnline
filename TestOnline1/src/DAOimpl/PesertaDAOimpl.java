@@ -8,7 +8,7 @@ package DAOimpl;
 import DAO.PesertaDAO;
 import java.util.List;
 import model.Peserta;
-import static model.Peserta_.email;
+//import static model.Peserta_.email;
 
 /**
  *
