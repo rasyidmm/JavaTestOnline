@@ -45,7 +45,7 @@ public class PesertaDAOimplTest {
 
     /**
      * Test of getById method, of class PesertaDAOimpl.
-//     */
+     */
 //    @Test
 //    public void testGetById() {
 //        System.out.println("getById");
@@ -57,7 +57,7 @@ public class PesertaDAOimplTest {
 //        // TODO review the generated test code and remove the default call to fail.
 //       //
 //    }
-//    
+    
 //    @Test
 //    public void testRegistrasi(){
 //        String email = "";
@@ -84,46 +84,46 @@ public class PesertaDAOimplTest {
 //        }
 //        assertSame(expResult, peserta);
 //    }
-////
-//    /**
-//     * Test of getAll method, of class PesertaDAOimpl.
-//     */
+//
+    /**
+     * Test of getAll method, of class PesertaDAOimpl.
+     */
 //    @Test
 //    public void testGetAll() {
 //        System.out.println("getAll");
 //        PesertaDAOimpl instance = new PesertaDAOimpl();
 //        List<Peserta> expResult = null;
 //        List<Peserta> result = instance.getAll();
-//        assertEquals(expResult, result);
+//        assertNotEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+//       // fail("The test case is a prototype.");
 //    }
 
     /**
      * usecase gagal login
-     */
-    @Test
-    public void testGetLogin() throws NoSuchAlgorithmException{
-        System.out.println("getLogin");
-        String email = "Jaga@gmail.com";
-        String password = "jaga11";
-        PesertaDAOimpl instance = new PesertaDAOimpl();
-        Peserta result = null;
-        boolean exit = instance.getExisEmail(email);
-        if (exit == true){
-            result = instance.getLogin(email,HelperEnkripsi.hash256(password));
-            if(result == null){
-                fail ("password salaha");
-            }
-            assertNotNull(result);
-        }else{
-            fail("email tidak ada");
-        }
+//     */
+//    @Test
+//    public void testGetLogin() throws NoSuchAlgorithmException{
+//        System.out.println("getLogin");
+//        String email = "Jaga@gmail.com";
+//        String password = "jaga11";
+//        PesertaDAOimpl instance = new PesertaDAOimpl();
+//        Peserta result = null;
+//        boolean exit = instance.getExisEmail(email);
+//        if (exit == true){
+//            result = instance.getLogin(email,HelperEnkripsi.hash256(password));
+//            if(result == null){
+//                fail ("password salah");
+//            }
+//            assertNotNull(result);
+//        }else{
+//            fail("email tidak ada");
+//        }
 //        Peserta result = instance.getLogin(email, password);
 //       // assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //       // fail("The test case is a prototype.");
 //        assertNull(result);
-    }
-    
+//    }
+//    
 }
