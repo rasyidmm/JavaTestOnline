@@ -17,4 +17,5 @@ public interface PesertaDAO  extends GeneralDAO{
     public List<Peserta> getAll();
     public Peserta getLogin(String email, String password);
     public Peserta getByEmail(String email);
+    public boolean getExisEmail(String email);
 }

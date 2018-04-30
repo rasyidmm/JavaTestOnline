@@ -80,32 +80,32 @@ public class main {
 //        PesertaProfil pp = new PesertaProfil();
 //        pdao.insert(p);
 //=======================insert peserta n profil========================
-     //   String pattern = "yyyy-MM-DD";
-//       
-//        PesertaDAO pdao = new PesertaDAOimpl();
-//        Peserta   p =  new Peserta();
-//        p.setEmail("Jaga@gmail.com");
-//        p.setPassword("jaga");
-//        
-//        PesertaProfilDAO ppdao = new PesertaProfilDAOimpl();
-//        PesertaProfil pp = new PesertaProfil();
-//        pp.setNama_peserta("jaga");
-//        pp.setTempat_lahir("Jakarta");
-//        pp.setAlamat_peserta("Jakarta");
-//        pp.setNo_telp("082123987343");     
-//        
-//        Date merah;
-//        String dateFormat = "";
-//        SimpleDateFormat simpledd = new SimpleDateFormat("yyyy/MM/dd");
-//        merah = simpledd.parse("1994/09/09");
-//        simpledd.applyPattern("yyyy-MM-dd");
-//        dateFormat = simpledd.format(merah);
-//        pp.setTanggal_lahir(dateFormat);
-//        pp.setPeserta(p);
-//        pdao.insert(p);
-//        ppdao.insert(pp);
-//        
-//        
+        String pattern = "yyyy-MM-DD";
+       
+        PesertaDAO pdao = new PesertaDAOimpl();
+        Peserta   p =  new Peserta();
+        p.setEmail("Jaga@gmail.com");
+        p.setPassword(HelperEnkripsi.hash256("jaga"));
+        
+        PesertaProfilDAO ppdao = new PesertaProfilDAOimpl();
+        PesertaProfil pp = new PesertaProfil();
+        pp.setNama_peserta("jaga");
+        pp.setTempat_lahir("Jakarta");
+        pp.setAlamat_peserta("Jakarta");
+        pp.setNo_telp("082123987343");     
+        
+        Date merah;
+        String dateFormat = "";
+        SimpleDateFormat simpledd = new SimpleDateFormat("yyyy/MM/dd");
+        merah = simpledd.parse("1994/09/09");
+        simpledd.applyPattern("yyyy-MM-dd");
+        dateFormat = simpledd.format(merah);
+        pp.setTanggal_lahir(dateFormat);
+        pp.setPeserta(p);
+        pdao.insert(p);
+        ppdao.insert(pp);
+        
+        
 //        
      
 //====================update=============================

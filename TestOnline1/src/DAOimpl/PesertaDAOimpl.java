@@ -44,11 +44,19 @@ public class PesertaDAOimpl extends GeneralDAOimpl implements PesertaDAO{
     @Override
     public Peserta getByEmail(String email) {
         return (Peserta) em.createQuery("select p from Peserta p where p.email like ?1").setParameter(1, email).getSingleResult();
-      //  for 
+      // for 
     }
 
+    @Override
+    public boolean getExisEmail(String email) {
+        boolean exist =false;
+        List<String> listexitE = em.createQuery("select u.email from Peserta u").getResultList();
+        for (String s :listexitE){
+            if(email.equals(s)){
+                exist = true;
+            }
+        }
+        return exist;
 
-    
-
-
+    }  
 }

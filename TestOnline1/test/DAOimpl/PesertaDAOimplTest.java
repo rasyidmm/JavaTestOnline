@@ -6,7 +6,9 @@
 package DAOimpl;
 
 import DAO.PesertaDAO;
+import Helper.HelperEnkripsi;
 import Helper.HelperPeserta;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import model.Peserta;
 import org.junit.After;
@@ -100,18 +102,28 @@ public class PesertaDAOimplTest {
     /**
      * usecase gagal login
      */
-//    @Test
-//    public void testGetLogin() {
-//        System.out.println("getLogin");
-//        String email = "dono@gmail.com";
-//        String password = "123456";
-//        PesertaDAOimpl instance = new PesertaDAOimpl();
-//        //Peserta expResult = null;
+    @Test
+    public void testGetLogin() throws NoSuchAlgorithmException{
+        System.out.println("getLogin");
+        String email = "Jaga@gmail.com";
+        String password = "jaga11";
+        PesertaDAOimpl instance = new PesertaDAOimpl();
+        Peserta result = null;
+        boolean exit = instance.getExisEmail(email);
+        if (exit == true){
+            result = instance.getLogin(email,HelperEnkripsi.hash256(password));
+            if(result == null){
+                fail ("password salaha");
+            }
+            assertNotNull(result);
+        }else{
+            fail("email tidak ada");
+        }
 //        Peserta result = instance.getLogin(email, password);
 //       // assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //       // fail("The test case is a prototype.");
-//        assertNotNull(result);
-//    }
+//        assertNull(result);
+    }
     
 }
