@@ -15,4 +15,5 @@ import model.PesertaProfil;
 public interface PesertaProfilDAO extends GeneralDAO{
     public PesertaProfil getById(long id);
     public List<PesertaProfil> getAll();
+    public List<PesertaProfil> getByname();
 }

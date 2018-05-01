@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author noname
+ * @author rasyid
  */
 public class PesertaProfilDAOimplTest {
     
@@ -51,21 +51,35 @@ public class PesertaProfilDAOimplTest {
 //        PesertaProfil result = instance.getById(id);
 //        assertNotEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
-//       // fail("The test case is a prototype.");
+//        //fail("The test case is a prototype.");
 //    }
 
     /**
      * Test of getAll method, of class PesertaProfilDAOimpl.
-     */
-    @Test
-    public void testGetAll() {
-        System.out.println("getAll");
-        PesertaProfilDAOimpl instance = new PesertaProfilDAOimpl();
-        List<PesertaProfil> expResult = null;
-        List<PesertaProfil> result = instance.getAll();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-    
+//     */
+//    @Test
+//    public void testGetAll() {
+//        System.out.println("getAll");
+//        PesertaProfilDAOimpl instance = new PesertaProfilDAOimpl();
+//        List<PesertaProfil> expResult = null;
+//        List<PesertaProfil> result = instance.getAll();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
+//    /**
+//     * Test of getByname method, of class PesertaProfilDAOimpl.
+//     */
+//    @Test
+//    public void testGetByname() {
+//        System.out.println("getByname");
+//        PesertaProfilDAOimpl instance = new PesertaProfilDAOimpl();
+//        List<PesertaProfil> expResult = null;
+//        List<PesertaProfil> result = instance.getByname();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        //fail("The test case is a prototype.");
+//    }
+//    
 }

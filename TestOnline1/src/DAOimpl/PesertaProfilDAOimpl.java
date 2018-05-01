@@ -27,5 +27,10 @@ public class PesertaProfilDAOimpl extends GeneralDAOimpl implements PesertaProfi
     public List<PesertaProfil> getAll() {
         return em.createQuery("from PeseertaProfil p").getResultList();
     }
+
+    @Override
+    public List<PesertaProfil> getByname() {
+        return em.createQuery("from p.nama_peserta from PesertaProfil p").getResultList();
+    }
     
 }
