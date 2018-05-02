@@ -45,7 +45,7 @@ public class main {
 //======================insert soal Kelompok====================
 //        SoalKelompokDAO skdao = new SoalKelompokDAOimpl();
 //        SoalKelompok sk = new SoalKelompok();
-//        sk.setNama_kelomok_soal("Fisika");
+//        sk.setNama_kelomok_soal("Matematika");
 //        skdao.insert(sk);
 //=====================insert soal type=========================
 //          SoalTypeDAO stdao = new SoalTypeDAOimpl();
@@ -107,7 +107,11 @@ public class main {
         
         
 //        
-     
+//===================update type Soal====================
+//        SoalTypeDAO stdao = new SoalTypeDAOimpl();
+//        SoalType ts = stdao.getById(1);
+//        ts.setNama_type_soal("Uraian");
+//        stdao.update(ts);
 //====================update=============================
 //        PesertaDAO pdao = new PesertaDAOimpl();
 //        Peserta p = pdao.getById(1);

@@ -32,12 +32,13 @@ public abstract class Additional {
     @PrePersist
     public  void  onCreate(){
         setCreateDate(new Date());
+        setCreateBy("Admin");
         
     }
     @PreUpdate
     public void onUpdate(){
         setUpdateDate(new Date());
-        
+        setUpdateBy("Admin");
     }
 
     /**
