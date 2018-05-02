@@ -10,6 +10,7 @@ import DAO.PesertaProfilDAO;
 import Helper.HelperEnkripsi;
 import Helper.HelperPeserta;
 import Helper.HelperPesertaNullPassword;
+import Helper.HelperValidationPassword;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -66,59 +67,62 @@ public class PesertaDAOimplTest {
 //       //
 //    }
 //    
-//    @Test
-//    public void testRegistrasi() throws NoSuchAlgorithmException, ParseException{
-//        String email = "ojik@gmail";
-//        String password = "ojik";
-//        String nama = "ojik";
-//        String alamat = "Semarang";
-//        String tempatLahit = "Semarang";
-//        //String tanggal = "";
-//        String nohp = "08213456666";
-//        Date merah;
-//        String dateFormat = "";
-//        SimpleDateFormat simpledd = new SimpleDateFormat("yyyy/MM/dd");
-//        merah = simpledd.parse("1994/09/09");
-//        simpledd.applyPattern("yyyy-MM-dd");
-//        dateFormat = simpledd.format(merah);
-////        String repassword = "dd";
+    @Test
+    public void testRegistrasi() throws NoSuchAlgorithmException, ParseException{
+        String email = "oQSASwwedewbhhdjwhdbjjbffjsdnsdfknwheddwedQWDQW@gmail";
+        String password = "";
+        String repassword = "1234589";
+        String nama = "oASewfsdfwDawbedjhweaSAqWDQwdjikWS";
+        String alamat = "Semarang";
+        String tempatLahit = "Semarang";
+        //String tanggal = "";
+        String nohp = "08213456666";
+        Date merah;
+        String dateFormat = "";
+        SimpleDateFormat simpledd = new SimpleDateFormat("yyyy/MM/dd");
+        merah = simpledd.parse("1994/09/09");
+        simpledd.applyPattern("yyyy-MM-dd");
+        dateFormat = simpledd.format(merah);
 //        
-//        boolean benar = HelperPesertaNullPassword.getnullpassword(password);
-//        assertFalse(benar);
-////        boolean sama = HelperPeserta.getSamePassword(password, repassword);
-////        assertTrue(sama);
-//        PesertaDAO pdao = new PesertaDAOimpl();
-//        Peserta peserta = new Peserta();
-//        peserta.setEmail(email);
-//        peserta.setPassword(HelperEnkripsi.hash256(password));
-//        
-//        PesertaProfilDAO ppdao = new PesertaProfilDAOimpl();
-//        PesertaProfil pp = new PesertaProfil();
-//        pp.setNama_peserta(nama);
-//        pp.setAlamat_peserta(alamat);
-//        pp.setTempat_lahir(tempatLahit);
-//        pp.setNo_telp(nohp);
-//        pp.setTanggal_lahir(dateFormat);
-//        pp.setPeserta(peserta);
-//        pdao.insert(peserta);
-//        ppdao.insert(pp);
-//        List<Peserta> list = pdao.getAll();
-//        long id = list.size();
-//        Peserta expResult = new Peserta();
-//        for(Peserta result: list){
-//           assertSame(peserta.getEmail(), result.getEmail());
-//           if(peserta.getEmail()==result.getEmail()){
-//               expResult = result;
-//               break;
-//           }
-//           
-//        }
-//        assertSame(expResult, peserta);
-//    }
+        
+        boolean benar = HelperPesertaNullPassword.getnullpassword(password);
+        assertFalse(benar);
+        boolean pass = HelperValidationPassword.cekPanjangPassword(password);
+        assertTrue(pass);
+        boolean sama = HelperPeserta.getSamePassword(password, repassword);
+        assertTrue(sama);
+        PesertaDAO pdao = new PesertaDAOimpl();
+        Peserta peserta = new Peserta();
+        peserta.setEmail(email);
+        peserta.setPassword(HelperEnkripsi.hash256(password));
+        
+        PesertaProfilDAO ppdao = new PesertaProfilDAOimpl();
+        PesertaProfil pp = new PesertaProfil();
+        pp.setNama_peserta(nama);
+        pp.setAlamat_peserta(alamat);
+        pp.setTempat_lahir(tempatLahit);
+        pp.setNo_telp(nohp);
+        pp.setTanggal_lahir(dateFormat);
+        pp.setPeserta(peserta);
+        pdao.insert(peserta);
+        ppdao.insert(pp);
+        List<Peserta> list = pdao.getAll();
+        long id = list.size();
+        Peserta expResult = new Peserta();
+        for(Peserta result: list){
+           assertSame(peserta.getEmail(), result.getEmail());
+           if(peserta.getEmail()==result.getEmail()){
+               expResult = result;
+               break;
+           }
+           
+        }
+        assertNotSame(expResult, peserta);
+    }
 
-    /**
-     * Test of getAll method, of class PesertaDAOimpl.
-     */
+//    /**
+//     * Test of getAll method, of class PesertaDAOimpl.
+//     */
 //    @Test
 //    public void testGetAll() {
 //        System.out.println("getAll");
@@ -129,32 +133,32 @@ public class PesertaDAOimplTest {
 //        // TODO review the generated test code and remove the default call to fail.
 //       // fail("The test case is a prototype.");
 //    }
-
-    /**
-     * usecase gagal login
-//     */
-    @Test
-    public void testGetLogin() throws NoSuchAlgorithmException{
-        System.out.println("getLogin");
-        String email = "Jag1a@gmail.com";
-        String password = "ja1gae";
-        PesertaDAOimpl instance = new PesertaDAOimpl();
-        Peserta result = null;
-        boolean exit = instance.getExisEmail(email);
-        if (exit == true){
-            result = instance.getLogin(email,HelperEnkripsi.hash256(password));
-            if(result == null){
-                fail ("password salah");
-            }
-            assertNotNull(result);
-        }else{
-            fail("email tidak ada");
-        }
-        //Peserta result = instance.getLogin(email, password);
-       // assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
-        assertNotNull(result);
-    }
+//
+//    /**
+//     * usecase gagal login
+////     */
+//    @Test
+//    public void testGetLogin() throws NoSuchAlgorithmException{
+//        System.out.println("getLogin");
+//        String email = "Jag1a@gmail.com";
+//        String password = "ja1ga";
+//        PesertaDAOimpl instance = new PesertaDAOimpl();
+//        Peserta result = null;
+//        boolean exit = instance.getExisEmail(email);
+//        if (exit == true){
+//            result = instance.getLogin(email,HelperEnkripsi.hash256(password));
+//            if(result == null){
+//                fail ("password salah");
+//            }
+//            assertNotNull(result);
+//        }else{
+//            fail("email tidak ada");
+//        }
+//        //Peserta result = instance.getLogin(email, password);
+//       // assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//       // fail("The test case is a prototype.");
+//        assertNotNull(result);
+//    }
 //    
 }
