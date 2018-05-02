@@ -6,43 +6,28 @@
 package model;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 /**
  *
- * @author noname
+ * @author rasyid
  */
 @Entity
-public class Soal extends Additional implements Serializable {
-
-    @OneToMany(mappedBy = "soal")
-    private List<SoalPilihanJawaban> soalPilihanJawabans;
-
-
+public class SoalPilihanJawaban extends Additional implements Serializable {
 
     private static long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(length = 100, nullable = false)
-    private String soal;
-    @Basic(optional = false)
-    @Column(length = 100, nullable = false)
-    private int nilai_soal;
+    private char pilihan;
+    private String pilihanjawaban;
+    private boolean kuncijawaban;
     @ManyToOne
-    private SoalKelompok soalKelompok;
-    @ManyToOne
-    private SoalType soalType;
-    
+    private Soal soal;
 
     public Long getId() {
         return id;
@@ -62,10 +47,10 @@ public class Soal extends Additional implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Soal)) {
+        if (!(object instanceof SoalPilihanJawaban)) {
             return false;
         }
-        Soal other = (Soal) object;
+        SoalPilihanJawaban other = (SoalPilihanJawaban) object;
         if ((this.getId() == null && other.getId() != null) || (this.getId() != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -74,7 +59,7 @@ public class Soal extends Additional implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Soal[ id=" + getId() + " ]";
+        return "model.SoalPilihanJawaban[ id=" + getId() + " ]";
     }
 
     /**
@@ -92,66 +77,59 @@ public class Soal extends Additional implements Serializable {
     }
 
     /**
+     * @return the pilihan
+     */
+    public char getPilihan() {
+        return pilihan;
+    }
+
+    /**
+     * @param pilihan the pilihan to set
+     */
+    public void setPilihan(char pilihan) {
+        this.pilihan = pilihan;
+    }
+
+    /**
+     * @return the pilihanjawaban
+     */
+    public String getPilihanjawaban() {
+        return pilihanjawaban;
+    }
+
+    /**
+     * @param pilihanjawaban the pilihanjawaban to set
+     */
+    public void setPilihanjawaban(String pilihanjawaban) {
+        this.pilihanjawaban = pilihanjawaban;
+    }
+
+    /**
+     * @return the kuncijawaban
+     */
+    public boolean isKuncijawaban() {
+        return kuncijawaban;
+    }
+
+    /**
+     * @param kuncijawaban the kuncijawaban to set
+     */
+    public void setKuncijawaban(boolean kuncijawaban) {
+        this.kuncijawaban = kuncijawaban;
+    }
+
+    /**
      * @return the soal
      */
-    public String getSoal() {
+    public Soal getSoal() {
         return soal;
     }
 
     /**
      * @param soal the soal to set
      */
-    public void setSoal(String soal) {
+    public void setSoal(Soal soal) {
         this.soal = soal;
     }
-
-  
-
-    /**
-     * @return the soalKelompok
-     */
-    public SoalKelompok getSoalKelompok() {
-        return soalKelompok;
-    }
-
-    /**
-     * @param soalKelompok the soalKelompok to set
-     */
-    public void setSoalKelompok(SoalKelompok soalKelompok) {
-        this.soalKelompok = soalKelompok;
-    }
-
-    /**
-     * @return the soalType
-     */
-    public SoalType getSoalType() {
-        return soalType;
-    }
-
-    /**
-     * @param soalType the soalType to set
-     */
-    public void setSoalType(SoalType soalType) {
-        this.soalType = soalType;
-    }
-
-    /**
-     * @return the nilai_soal
-     */
-    public int getNilai_soal() {
-        return nilai_soal;
-    }
-
-    /**
-     * @param nilai_soal the nilai_soal to set
-     */
-    public void setNilai_soal(int nilai_soal) {
-        this.nilai_soal = nilai_soal;
-    }
-
-    /**
-     * @return the soalTypes
-     */
-
     
 }
