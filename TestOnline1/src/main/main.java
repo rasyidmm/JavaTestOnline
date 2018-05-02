@@ -109,15 +109,15 @@ public class main {
 //        ppdao.insert(pp);
 //        
 //=========================Insert Soalpilihan
-         SoalPilihanJawabanDAO spjdao = new SoalPilihanJawabanDAOimpl();
-         SoalPilihanJawaban spj = new SoalPilihanJawaban();
-         SoalDAO sdao = new SoalDAOimpl();
-         Soal s = sdao.getById(1);
-         spj.setPilihan("A");
-         spj.setPilihanjawaban("indonesia");
-         spj.setKuncijawaban(true);
-         spj.setSoal(s);
-         spjdao.insert(spj);
+//         SoalPilihanJawabanDAO spjdao = new SoalPilihanJawabanDAOimpl();
+//         SoalPilihanJawaban spj = new SoalPilihanJawaban();
+//         SoalDAO sdao = new SoalDAOimpl();
+//         Soal s = sdao.getById(1);
+//         spj.setPilihan("A");
+//         spj.setPilihanjawaban("indonesia");
+//         spj.setKuncijawaban(true);
+//         spj.setSoal(s);
+//         spjdao.insert(spj);
 ////        
 //===================update type Soal====================
 //        SoalTypeDAO stdao = new SoalTypeDAOimpl();
