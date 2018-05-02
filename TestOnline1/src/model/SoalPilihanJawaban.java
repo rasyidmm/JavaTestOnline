@@ -6,6 +6,7 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,8 +24,11 @@ public class SoalPilihanJawaban extends Additional implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private char pilihan;
+    @Column(length = 100, nullable = false)
+    private String pilihan;
+    @Column(length = 1000, nullable = false)
     private String pilihanjawaban;
+    @Column(length = 1000, nullable = false)
     private boolean kuncijawaban;
     @ManyToOne
     private Soal soal;
@@ -76,19 +80,6 @@ public class SoalPilihanJawaban extends Additional implements Serializable {
         serialVersionUID = aSerialVersionUID;
     }
 
-    /**
-     * @return the pilihan
-     */
-    public char getPilihan() {
-        return pilihan;
-    }
-
-    /**
-     * @param pilihan the pilihan to set
-     */
-    public void setPilihan(char pilihan) {
-        this.pilihan = pilihan;
-    }
 
     /**
      * @return the pilihanjawaban
@@ -130,6 +121,20 @@ public class SoalPilihanJawaban extends Additional implements Serializable {
      */
     public void setSoal(Soal soal) {
         this.soal = soal;
+    }
+
+    /**
+     * @return the pilihan
+     */
+    public String getPilihan() {
+        return pilihan;
+    }
+
+    /**
+     * @param pilihan the pilihan to set
+     */
+    public void setPilihan(String pilihan) {
+        this.pilihan = pilihan;
     }
     
 }

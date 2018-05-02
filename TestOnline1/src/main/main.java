@@ -9,11 +9,13 @@ import DAO.PesertaDAO;
 import DAO.PesertaProfilDAO;
 import DAO.SoalDAO;
 import DAO.SoalKelompokDAO;
+import DAO.SoalPilihanJawabanDAO;
 import DAO.SoalTypeDAO;
 import DAOimpl.PesertaDAOimpl;
 import DAOimpl.PesertaProfilDAOimpl;
 import DAOimpl.SoalDAOimpl;
 import DAOimpl.SoalKelompokDAOimpl;
+import DAOimpl.SoalPilihanJawabanDAOimpl;
 import DAOimpl.SoalTypeDAOimpl;
 import Helper.HelperEnkripsi;
 import db.DbConnection;
@@ -30,6 +32,7 @@ import model.Peserta;
 import model.PesertaProfil;
 import model.Soal;
 import model.SoalKelompok;
+import model.SoalPilihanJawaban;
 import model.SoalType;
 import sun.java2d.pipe.SpanShapeRenderer;
 
@@ -80,33 +83,42 @@ public class main {
 //        PesertaProfil pp = new PesertaProfil();
 //        pdao.insert(p);
 //=======================insert peserta n profil========================
-        String pattern = "yyyy-MM-DD";
-       
-        PesertaDAO pdao = new PesertaDAOimpl();
-        Peserta  p =  new Peserta();
-        p.setEmail("Jag1a@gmail.com");
-        p.setPassword(HelperEnkripsi.hash256("ja1ga"));
-        
-        PesertaProfilDAO ppdao = new PesertaProfilDAOimpl();
-        PesertaProfil pp = new PesertaProfil();
-        pp.setNama_peserta("jaga1");
-        pp.setTempat_lahir("Jakarta");
-        pp.setAlamat_peserta("Jakarta");
-        pp.setNo_telp("082123987343");     
-        
-        Date merah;
-        String dateFormat = "";
-        SimpleDateFormat simpledd = new SimpleDateFormat("yyyy/MM/dd");
-        merah = simpledd.parse("1994/09/09");
-        simpledd.applyPattern("yyyy-MM-dd");
-        dateFormat = simpledd.format(merah);
-        pp.setTanggal_lahir(dateFormat);
-        pp.setPeserta(p);//penting
-        pdao.insert(p);
-        ppdao.insert(pp);
-        
-        
+//        String pattern = "yyyy-MM-DD";
+//       
+//        PesertaDAO pdao = new PesertaDAOimpl();
+//        Peserta  p =  new Peserta();
+//        p.setEmail("Jag1a@gmail.com");
+//        p.setPassword(HelperEnkripsi.hash256("ja1ga"));
 //        
+//        PesertaProfilDAO ppdao = new PesertaProfilDAOimpl();
+//        PesertaProfil pp = new PesertaProfil();
+//        pp.setNama_peserta("jaga1");
+//        pp.setTempat_lahir("Jakarta");
+//        pp.setAlamat_peserta("Jakarta");
+//        pp.setNo_telp("082123987343");     
+//        
+//        Date merah;
+//        String dateFormat = "";
+//        SimpleDateFormat simpledd = new SimpleDateFormat("yyyy/MM/dd");
+//        merah = simpledd.parse("1994/09/09");
+//        simpledd.applyPattern("yyyy-MM-dd");
+//        dateFormat = simpledd.format(merah);
+//        pp.setTanggal_lahir(dateFormat);
+//        pp.setPeserta(p);//penting
+//        pdao.insert(p);
+//        ppdao.insert(pp);
+//        
+//=========================Insert Soalpilihan
+         SoalPilihanJawabanDAO spjdao = new SoalPilihanJawabanDAOimpl();
+         SoalPilihanJawaban spj = new SoalPilihanJawaban();
+         SoalDAO sdao = new SoalDAOimpl();
+         Soal s = sdao.getById(1);
+         spj.setPilihan("A");
+         spj.setPilihanjawaban("indonesia");
+         spj.setKuncijawaban(true);
+         spj.setSoal(s);
+         spjdao.insert(spj);
+////        
 //===================update type Soal====================
 //        SoalTypeDAO stdao = new SoalTypeDAOimpl();
 //        SoalType ts = stdao.getById(1);
