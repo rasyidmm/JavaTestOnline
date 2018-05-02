@@ -83,13 +83,13 @@ public class main {
         String pattern = "yyyy-MM-DD";
        
         PesertaDAO pdao = new PesertaDAOimpl();
-        Peserta   p =  new Peserta();
-        p.setEmail("Jaga@gmail.com");
-        p.setPassword(HelperEnkripsi.hash256("jaga"));
+        Peserta  p =  new Peserta();
+        p.setEmail("Jag1a@gmail.com");
+        p.setPassword(HelperEnkripsi.hash256("ja1ga"));
         
         PesertaProfilDAO ppdao = new PesertaProfilDAOimpl();
         PesertaProfil pp = new PesertaProfil();
-        pp.setNama_peserta("jaga");
+        pp.setNama_peserta("jaga1");
         pp.setTempat_lahir("Jakarta");
         pp.setAlamat_peserta("Jakarta");
         pp.setNo_telp("082123987343");     
@@ -101,7 +101,7 @@ public class main {
         simpledd.applyPattern("yyyy-MM-dd");
         dateFormat = simpledd.format(merah);
         pp.setTanggal_lahir(dateFormat);
-        pp.setPeserta(p);
+        pp.setPeserta(p);//penting
         pdao.insert(p);
         ppdao.insert(pp);
         

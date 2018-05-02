@@ -8,8 +8,11 @@ package DAOimpl;
 import DAO.PesertaDAO;
 import Helper.HelperEnkripsi;
 import Helper.HelperPeserta;
+import Helper.HelperPesertaNullPassword;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Peserta;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -58,33 +61,35 @@ public class PesertaDAOimplTest {
 //       //
 //    }
     
-//    @Test
-//    public void testRegistrasi(){
-//        String email = "";
-//        String password = "";
-//        String repassword = "";
-//        
-//        boolean sama = HelperPeserta.getSamePassword(password, repassword);
-//        assertTrue(sama);
-//        PesertaDAO pdao = new PesertaDAOimpl();
-//        Peserta peserta = new Peserta();
-//        peserta.setEmail(email);
-//        peserta.setPassword(password);
-//        pdao.insert(peserta);
-//        List<Peserta> list = pdao.getAll();
-////        long id = list.size();
-//        Peserta expResult = new Peserta();
-//        for(Peserta result: list){
-//           //assertSame(peserta.getEmail(), result.getEmail());
-//           if(peserta.getEmail()==result.getEmail()){
-//               expResult = result;
-//               break;
-//           }
-//           
-//        }
-//        assertSame(expResult, peserta);
-//    }
-//
+    @Test
+    public void testRegistrasi() throws NoSuchAlgorithmException{
+        String email = "dd@gmail";
+        String password = "dd";
+        String repassword = "dd";
+        
+        boolean benar = HelperPesertaNullPassword.getnullpassword(password);
+        assertTrue(benar);
+        boolean sama = HelperPeserta.getSamePassword(password, repassword);
+        assertTrue(sama);
+        PesertaDAO pdao = new PesertaDAOimpl();
+        Peserta peserta = new Peserta();
+        peserta.setEmail(email);
+        peserta.setPassword(HelperEnkripsi.hash256(password));
+        pdao.insert(peserta);
+        List<Peserta> list = pdao.getAll();
+//        long id = list.size();
+        Peserta expResult = new Peserta();
+        for(Peserta result: list){
+           //assertSame(peserta.getEmail(), result.getEmail());
+           if(peserta.getEmail()==result.getEmail()){
+               expResult = result;
+               break;
+           }
+           
+        }
+        assertSame(expResult, peserta);
+    }
+
     /**
      * Test of getAll method, of class PesertaDAOimpl.
      */

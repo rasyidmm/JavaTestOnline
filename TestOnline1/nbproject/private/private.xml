@@ -8,6 +8,7 @@
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/model/PesertaProfil.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/DAO/PesertaDAO.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/DAO/PesertaProfilDAO.java</file>
+            <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/model/SoalKelompok.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/model/Additional.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/test/DAOimpl/SoalDAOimplTest.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/Helper/HelperValidationEmail.java</file>
@@ -16,6 +17,7 @@
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/DAOimpl/GeneralDAOimpl.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/DAOimpl/SoalDAOimpl.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/model/Peserta.java</file>
+            <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/Helper/HelperRandomPassword.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/Helper/HelperPeserta.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/src/DAO/SoalDAO.java</file>
             <file>file:/D:/LawenconBootcamp/JAVA/gitprojek/JavaTestOnline/TestOnline1/test/DAOimpl/PesertaProfilDAOimplTest.java</file>

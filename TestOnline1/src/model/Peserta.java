@@ -22,8 +22,10 @@ import javax.persistence.OneToOne;
 @Entity
 public class Peserta extends Additional implements Serializable {
 
-    @OneToOne(mappedBy = "peserta",cascade = CascadeType.ALL)
-    private PesertaProfil profilPeserta;
+    @OneToOne(mappedBy = "peserta")
+    private PesertaProfil pesertaProfil;
+
+
 
     private static long serialVersionUID = 1L;
     @Id
@@ -70,19 +72,7 @@ public class Peserta extends Additional implements Serializable {
         return "model.Peserta[ id=" + getId() + " ]";
     }
 
-    /**
-     * @return the profilPeserta
-     */
-    public PesertaProfil getProfilPeserta() {
-        return profilPeserta;
-    }
 
-    /**
-     * @param profilPeserta the profilPeserta to set
-     */
-    public void setProfilPeserta(PesertaProfil profilPeserta) {
-        this.profilPeserta = profilPeserta;
-    }
 
     /**
      * @return the serialVersionUID
@@ -124,6 +114,20 @@ public class Peserta extends Additional implements Serializable {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the pesertaProfil
+     */
+    public PesertaProfil getPesertaProfil() {
+        return pesertaProfil;
+    }
+
+    /**
+     * @param pesertaProfil the pesertaProfil to set
+     */
+    public void setPesertaProfil(PesertaProfil pesertaProfil) {
+        this.pesertaProfil = pesertaProfil;
     }
     
 }

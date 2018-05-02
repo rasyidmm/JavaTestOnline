@@ -137,19 +137,6 @@ public class PesertaProfil extends Additional implements Serializable {
 
 
 
-    /**
-     * @return the peserta
-     */
-    public Peserta getPeserta() {
-        return peserta;
-    }
-
-    /**
-     * @param peserta the peserta to set
-     */
-    public void setPeserta(Peserta peserta) {
-        this.peserta = peserta;
-    }
 
     /**
      * @return the no_telp
@@ -177,6 +164,20 @@ public class PesertaProfil extends Additional implements Serializable {
      */
     public void setTanggal_lahir(String tanggal_lahir) {
         this.tanggal_lahir = tanggal_lahir;
+    }
+
+    /**
+     * @return the peserta
+     */
+    public Peserta getPeserta() {
+        return peserta;
+    }
+
+    /**
+     * @param peserta the peserta to set
+     */
+    public void setPeserta(Peserta peserta) {
+        this.peserta = peserta;
     }
 
 
